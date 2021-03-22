@@ -53,8 +53,10 @@ int analog2y = 0;
 
 void setup()
 {
+   // HC-05 default speed in AT command more for bluetooth configuration
   Serial.begin(9600);
   slave.begin(9600);                                  // HC-05 default speed in AT command more
+  
   pinMode(button1, INPUT);
   pinMode(button2, INPUT);
   pinMode(button3, INPUT);
@@ -93,26 +95,6 @@ void loop()
    analog1y = analogRead(A3);
    analog2y = analogRead(A4);
  
-  /*Serial.print(buttonState1);
-  Serial.print(" ");
-  Serial.print(buttonState2);
-  Serial.print(" ");
-  Serial.print(buttonState3);
-  Serial.print(" ");
-  Serial.print(buttonState4);
-  Serial.print(" ");  
-  Serial.print(buttonState5);
-  Serial.print(" ");  
-  Serial.print(buttonState6);
-  Serial.print(" ");  
-  Serial.print(buttonState7);
-  Serial.print(" ");  
-  Serial.print(buttonState8);
-  Serial.print("     ");
-  Serial.print(buttonState9);
-  Serial.print(" ");  
-  Serial.print(buttonState10);
-  Serial.print("     ");*/
   Serial.print(analog1x);
   Serial.print(" ");
   Serial.print(analog2x);
@@ -128,7 +110,8 @@ void loop()
   Serial.print(lamatekan);
   Serial.print("  ");
  
-  //kondisi buat button si relay
+  //kondisi buat button si relay 
+  //for Relay Condition mode
       if (buttonState11 == 1)
       {
           if (buttonState10 == 1)
@@ -148,7 +131,7 @@ void loop()
       }
   
         
-      
+      //oke guys so in below these code if user press long or press fast it has 2 different condition because limited amount number button
      
       //Mode 1
       if (buttonState1 == 1) 
